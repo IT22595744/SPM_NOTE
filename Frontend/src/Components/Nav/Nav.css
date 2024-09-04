@@ -1,0 +1,28 @@
+/* Nav.css */
+
+.home-ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+    display: flex; /* Use flexbox to align items horizontally */
+    justify-content: space-around; /* Distribute space evenly */
+    /* Light gray background */
+  }
+  
+  .home-li {
+    margin: 10px;
+  }
+  
+  .home-li h1 {
+    font-size: 20px; /* Font size of the heading */
+    color: #007bff; /* Blue text color */
+    cursor: pointer; /* Pointer cursor on hover */
+  }
+  
+  .home-li h1:hover {
+    color: #0056b3; /* Darker blue on hover */
+  }
+  
+  .activehome-a {
+    text-decoration: none;
+  }

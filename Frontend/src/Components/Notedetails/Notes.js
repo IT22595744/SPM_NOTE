@@ -1,7 +1,9 @@
 import React,{useState,useEffect} from 'react';
 import Nav from "../Nav/Nav";
 import axios from "axios";
-import Note from "../Note/Note"
+import Note from "../Note/Note";
+import './Notes.css';
+import bgimg from "./bg3.jpeg";
 
 const URL="http://localhost:5000/notes";
 
@@ -21,8 +23,11 @@ function Notes() {
   return (
     <div>
       <Nav/>
-      <h1>Note Details Display Page</h1>
-      <div>
+       <div className="bgimg"
+      style={{ backgroundImage: `url(${bgimg})`, backgroundSize: "cover" ,position:"sticky",WebkitPosition:"sticky", 
+      MozPosition:"sticky"}}> 
+      <h1 className='hed1'>Note Details Display Page</h1>
+      <div className="notes-container">
       {/* The key prop is used to uniquely identify each item in the list (using the index i). */}
       {notes && notes.map((note,i) => (
            <div key={i}>
@@ -32,6 +37,8 @@ function Notes() {
         ))}
     </div>
     </div>
+    </div>
+    
   )
 }
 

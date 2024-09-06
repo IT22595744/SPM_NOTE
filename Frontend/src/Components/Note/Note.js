@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
+import './Note.css';
 
 function Note(props) {
     const {_id,name,note,grammer,complexsentence,description}=props.note;
@@ -34,10 +35,22 @@ function Note(props) {
       <h2>Complex Sentence:{complexsentence}</h2>
       <h2>Description:{description}</h2>
      {/* <a href="#" className="btn btn-primary">Go somewhere</a> */}
-      <button className='bt'>
-      <Link to={`/userdetails/${_id}`} className='btn btn-primary'>Update</Link>
+      {/* <button className='bt'>
+      <Link to={`/notedetails/${_id}`} className='btn btn-primary'>Update</Link>
       </button>
-      <button  className='btn btn-primary'>Delete</button> 
+      <button  className='btn btn-primary'>Delete</button>  */}
+      <button
+          className="nav_btn_log"
+          onClick={() => (window.location.href = `/notedetails/${_id}`)}
+        >
+          Update
+        </button>
+        <button
+          className="nav_btn_regi"
+          onClick={() => (window.location.href = "/userregister")}
+        >
+          Delete
+        </button>
    </div>
  </div>
     </div>

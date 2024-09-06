@@ -1,0 +1,15 @@
+.notes-container{
+    display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;  
+  /* // Optional: Add some spacing between cards */
+}
+
+.hed1{
+    text-align: center;
+}
+
+/* style={{ backgroundImage: `url(${bgimg})`, backgroundSize: "cover" ,position:"sticky",WebkitPosition: "sticky", 
+      MozPosition: "sticky",}} */

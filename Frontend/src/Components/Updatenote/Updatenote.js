@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import Nav from '../Nav/Nav'
+import Nav from '../Nav/Nav';
+import bgImage from "./update.jpeg";
 
 function Updatenote() {
   const [inputs, setInputs] = useState({});
@@ -50,8 +51,13 @@ function Updatenote() {
   return (
     <div>
       <Nav/>
-      <h1>Update notes</h1>
+      <div className="position-relative d-flex align-items-center justify-content-center vh-100"
+      style={{ backgroundImage: `url(${bgImage})`, backgroundSize: "cover" }}>
+      
+      
       <form onSubmit={handleSubmit}>
+      {/* <br/><br/><br/><br/><br/> */}
+      <h1 style={{marginTop:"90px"}}>Update Notes</h1>
   <div class="mb-3">
     <label for="InputName" class="form-label">Name</label>
     <input type="text" class="form-control" name="name" aria-describedby="nameHelp" onChange={handleChange} value={inputs.name}/>
@@ -73,12 +79,13 @@ function Updatenote() {
     <label for="InputDescription" class="form-label">Description</label>
     <input type="text" class="form-control" name="description" onChange={handleChange} value={inputs.description} required/>
   </div>
-  <div class="mb-3 form-check">
+  {/* <div class="mb-3 form-check">
     <input type="checkbox" class="form-check-input" id="exampleCheck1"/>
     <label class="form-check-label" for="exampleCheck1">Check me out</label>
-  </div>
+  </div> */}
   <button type="submit" class="btn btn-primary">Submit</button>
 </form>
+    </div>
     </div>
   );
 }

@@ -1,9 +1,29 @@
 import React from 'react';
 // import { Link } from 'react-router-dom';
+import axios from 'axios';
+import {useNavigate} from 'react-router-dom';
 import './Note.css';
 
 function Note(props) {
     const {_id,name,note,grammer,complexsentence,description}=props.note;
+
+    //implementing the delete function below delete handler
+    const history=useNavigate();
+    
+    const deleteHandler=async()=>{
+     const userconfirm=window.confirm("Are you sure you want to delete this note?")
+     if(userconfirm){
+      try{
+      await axios.delete(`http://localhost:5000/notes/${_id}`)
+      .then(res=>res.data)
+      .then(()=>history("/"))
+      .then(()=>history("/notedetails"))
+      }catch(error){
+      console.log("Error in note deleting:",error);
+      };
+    }
+      
+    }
   return (
     <div style={{alignItems:'center'}}>
         {/* <br></br>
@@ -47,7 +67,7 @@ function Note(props) {
         </button>
         <button
           className="nav_btn_regi"
-          onClick={() => (window.location.href = "/userregister")}
+          onClick={deleteHandler}
         >
           Delete
         </button>

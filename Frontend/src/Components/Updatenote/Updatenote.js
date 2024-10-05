@@ -45,7 +45,7 @@ function Updatenote() {
    const handleSubmit=async(e)=>{
     e.preventDefault();
     console.log(inputs);
-    sendRequest().then(()=>history('/notedetails'));
+    sendRequest().then(()=>history('/notedetails'),alert("Notes details updated successfully!"));
    };
 
   return (

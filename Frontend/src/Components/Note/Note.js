@@ -60,13 +60,13 @@ function Note(props) {
       </button>
       <button  className='btn btn-primary'>Delete</button>  */}
       <button
-          className="nav_btn_log"
+          className="nav_btn_log "
           onClick={() => (window.location.href = `/notedetails/${_id}`)}
         >
           Update
         </button>
         <button
-          className="nav_btn_regi"
+          className="nav_btn_regi "
           onClick={deleteHandler}
         >
           Delete

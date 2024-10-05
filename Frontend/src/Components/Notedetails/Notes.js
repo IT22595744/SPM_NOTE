@@ -28,7 +28,7 @@ function Notes() {
  const componentRef=useRef(null);
  const handleprint=useReactToPrint({contentRef: componentRef,
   documentTitle:"Notes Report",
-  onafterprint:()=>alert("Notes Report Succcessfully Download!"),
+  onAfterPrint:()=>alert("Notes Report Succcessfully Download!"),
  }
   
  )
